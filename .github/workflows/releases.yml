@@ -10,10 +10,7 @@
 
 name: build-release
 
-on: 
-  push:
-    tags:
-    - 'v*'
+on: workflow_dispatch
 
 jobs:
   # Build and package a new release for all supported platforms
