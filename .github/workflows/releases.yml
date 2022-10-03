@@ -16,9 +16,9 @@ jobs:
   # Build and package a new release for all supported platforms
   build-all-releases:
     name: Build releases from tag
-    uses: dlang/installer/.github/workflows/build_release_template.yml@master
+    uses: ibuclaw/dmd-release/.github/workflows/build_release_template.yml@stable
     with:
-      release_branch: master
+      release_branch: stable
 
   # Bundles and publishes the entire release
   generate_release:
