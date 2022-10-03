@@ -131,7 +131,7 @@ jobs:
           - os: windows-2019
             target: windows
           # FreeBSD is built on an additional VM
-          - os: macOS-11
+          - os: macos-12
             target: freebsd
 
     steps:
