@@ -12,25 +12,20 @@ name: build-release
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        description: 'DMD release tag'
-        required: True
-        type: string
 
 jobs:
   print-tag:
     runs-on: ubuntu-latest
     steps:
       - name: Echo given tag
-        run: echo given tag is ${{ inputs.tag }}
+        run: echo given tag is ${{ github.ref_name }}
 
   # Build and package a new release for all supported platforms
   build-all-releases:
     name: Build releases from tag
     uses: ibuclaw/dmd-release/.github/workflows/build_release_template.yml@stable
     with:
-      release_branch: stable
+      release_branch: ${{ github.ref_name }}
 
   # Bundles and publishes the entire release
   generate_release:
